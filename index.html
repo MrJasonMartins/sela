@@ -1,45 +1,370 @@
 
-<div class="links">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SPOTIFY -->
+    <title>Selá — Conteúdo digital</title>
 
-    <a href="https://open.spotify.com/intl-pt/artist/2HBD8Q2oCjFXQnIJY00qFC?si=ICBJbzByTOiQRzuSXmNC5Q"
-       class="botao"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Ouça no Spotify">
-        Ouça no Spotify
-    </a>
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
 
+    <style>
+        /* =========================================================
+           CORES
+           ========================================================= */
 
-    <!-- YOUTUBE -->
-
-    <a href="https://www.youtube.com/channel/UC0duipAOM9JHyOUcYX-yR7A"
-       class="botao"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Ouça no YouTube">
-        Ouça no YouTube
-    </a>
-
-
-    <!-- INSTAGRAM -->
-
-    <a href="https://www.instagram.com/mrjasonmartins/"
-       class="botao"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Visite o Instagram de Jason Martins">
-        Instagram
-    </a>
+        :root {
+            --azul-petroleo: #173c3d;
+            --azul-profundo: #102d2e;
+            --marfim: #f3eee2;
+            --marfim-suave: #e8e0d0;
+            --dourado: #b49a62;
+            --dourado-suave: #c6b27e;
+            --texto: #e9e2d3;
+        }
 
 
-    <!-- E-MAIL -->
+        /* =========================================================
+           RESET
+           ========================================================= */
 
-    <a href="mailto:mrjasonmartins@gmail.com"
-       class="botao"
-       aria-label="Entre em contato por e-mail">
-        Contato por e-mail
-    </a>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-</div>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--azul-petroleo);
+            color: var(--texto);
+            font-family: "Crimson Text", Georgia, serif;
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           ÁREA PRINCIPAL
+           ========================================================= */
+
+        .pagina {
+            width: min(100%, 760px);
+            margin: 0 auto;
+            padding: 70px 28px 55px;
+            text-align: center;
+        }
+
+
+        /* =========================================================
+           CABEÇALHO
+           ========================================================= */
+
+        .cabecalho {
+            margin-bottom: 55px;
+        }
+
+        .titulo {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(4rem, 13vw, 6.5rem);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            line-height: 0.9;
+            color: var(--marfim);
+        }
+
+        .subtitulo {
+            margin-top: 18px;
+
+            font-family: "Crimson Text", Georgia, serif;
+            font-size: 1.05rem;
+            letter-spacing: 0.08em;
+            color: var(--marfim-suave);
+        }
+
+
+        /* =========================================================
+           ORNAMENTO
+           ========================================================= */
+
+        .ornamento {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 34px auto;
+            color: var(--dourado);
+        }
+
+        .ornamento::before,
+        .ornamento::after {
+            content: "";
+            display: block;
+            width: 75px;
+            height: 1px;
+            background: var(--dourado);
+            opacity: 0.7;
+        }
+
+        .ornamento span {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+
+        /* =========================================================
+           TÍTULOS DE SEÇÃO
+           ========================================================= */
+
+        .titulo-secao {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 1.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--marfim);
+        }
+
+
+        /* =========================================================
+           TEXTO DE APRESENTAÇÃO
+           ========================================================= */
+
+        .introducao {
+            max-width: 570px;
+            margin: 18px auto 42px;
+            color: var(--marfim-suave);
+        }
+
+
+        /* =========================================================
+           LINKS
+           ========================================================= */
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+
+        .botao {
+            display: block;
+            padding: 13px 24px;
+
+            border: 1px solid var(--dourado);
+            color: var(--marfim);
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            transition:
+                background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .botao:hover {
+            background: var(--dourado);
+            color: var(--azul-profundo);
+            border-color: var(--dourado);
+        }
+
+
+        /* =========================================================
+           SOBRE
+           ========================================================= */
+
+        .sobre {
+            max-width: 590px;
+            margin: 0 auto;
+        }
+
+        .sobre p {
+            margin-top: 20px;
+            color: var(--marfim-suave);
+        }
+
+
+        /* =========================================================
+           RODAPÉ
+           ========================================================= */
+
+        footer {
+            margin-top: 70px;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+
+            color: var(--dourado-suave);
+        }
+
+
+        /* =========================================================
+           CELULAR
+           ========================================================= */
+
+        @media (max-width: 500px) {
+
+            .pagina {
+                padding: 55px 22px 40px;
+            }
+
+            .cabecalho {
+                margin-bottom: 45px;
+            }
+
+            .subtitulo {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            .titulo-secao {
+                font-size: 1.4rem;
+            }
+
+            .introducao {
+                font-size: 1.05rem;
+            }
+
+            .ornamento::before,
+            .ornamento::after {
+                width: 55px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <main class="pagina">
+
+        <!-- =====================================================
+             CABEÇALHO
+             ===================================================== -->
+
+        <header class="cabecalho">
+
+            <h1 class="titulo">Selá</h1>
+
+            <p class="subtitulo">
+                arranjos para violão solo e violão acompanhador
+            </p>
+
+        </header>
+
+
+        <!-- =====================================================
+             CONTEÚDO DIGITAL
+             ===================================================== -->
+
+        <section>
+
+            <div class="ornamento">
+                <span>❦</span>
+            </div>
+
+            <h2 class="titulo-secao">
+                Conteúdo digital
+            </h2>
+
+            <p class="introducao">
+                Este espaço reúne as gravações, vídeos e outros
+                conteúdos relacionados aos arranjos deste livro.
+            </p>
+
+
+            <div class="links">
+
+                <!-- SPOTIFY -->
+
+                <a href="https://open.spotify.com/intl-pt/artist/2HBD8Q2oCjFXQnIJY00qFC?si=ICBJbzByTOiQRzuSXmNC5Q"
+                   class="botao"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ouça no Spotify
+                </a>
+
+
+                <!-- YOUTUBE -->
+
+                <a href="https://www.youtube.com/channel/UC0duipAOM9JHyOUcYX-yR7A"
+                   class="botao"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ouça no YouTube
+                </a>
+
+
+                <!-- INSTAGRAM -->
+
+                <a href="https://www.instagram.com/mrjasonmartins/"
+                   class="botao"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Instagram
+                </a>
+
+
+                <!-- E-MAIL -->
+
+                <a href="mailto:mrjasonmartins@gmail.com"
+                   class="botao">
+                    Contato por e-mail
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SOBRE O PROJETO
+             ===================================================== -->
+
+        <section class="sobre">
+
+            <div class="ornamento">
+                <span>❦</span>
+            </div>
+
+            <h2 class="titulo-secao">
+                Sobre o projeto
+            </h2>
+
+            <p>
+                <em>Selá</em> reúne arranjos para violão de hinos da
+                tradição cristã brasileira, concebidos para o estudo,
+                a apreciação e a prática musical.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             RODAPÉ
+             ===================================================== -->
+
+        <footer>
+            Jason Martins · 2026
+        </footer>
+
+    </main>
+
+</body>
+</html>
