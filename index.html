@@ -7,16 +7,12 @@
 
     <title>Selá — Conteúdo digital</title>
 
-    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* =========================================================
-           CORES
-           ========================================================= */
-
         :root {
             --azul-petroleo: #173c3d;
             --azul-profundo: #102d2e;
@@ -27,15 +23,8 @@
             --texto: #e9e2d3;
         }
 
-
-        /* =========================================================
-           RESET
-           ========================================================= */
-
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         html {
@@ -43,17 +32,13 @@
         }
 
         body {
-            background: var(--azul-petroleo);
+            margin: 0;
+            background-color: var(--azul-petroleo);
             color: var(--texto);
             font-family: "Crimson Text", Georgia, serif;
             font-size: 1.15rem;
             line-height: 1.7;
         }
-
-
-        /* =========================================================
-           ÁREA PRINCIPAL
-           ========================================================= */
 
         .pagina {
             width: min(100%, 760px);
@@ -62,37 +47,27 @@
             text-align: center;
         }
 
-
-        /* =========================================================
-           CABEÇALHO
-           ========================================================= */
-
         .cabecalho {
             margin-bottom: 55px;
         }
 
         .titulo {
+            margin: 0;
+            color: var(--marfim);
             font-family: "Cormorant Garamond", Georgia, serif;
             font-size: clamp(4rem, 13vw, 6.5rem);
             font-weight: 500;
             letter-spacing: 0.04em;
             line-height: 0.9;
-            color: var(--marfim);
         }
 
         .subtitulo {
             margin-top: 18px;
-
+            color: var(--marfim-suave);
             font-family: "Crimson Text", Georgia, serif;
             font-size: 1.05rem;
             letter-spacing: 0.08em;
-            color: var(--marfim-suave);
         }
-
-
-        /* =========================================================
-           ORNAMENTO
-           ========================================================= */
 
         .ornamento {
             display: flex;
@@ -109,45 +84,30 @@
             display: block;
             width: 75px;
             height: 1px;
-            background: var(--dourado);
+            background-color: var(--dourado);
             opacity: 0.7;
         }
 
         .ornamento span {
-            font-family: "Cormorant Garamond", serif;
+            font-family: "Cormorant Garamond", Georgia, serif;
             font-size: 1.25rem;
-            line-height: 1;
         }
 
-
-        /* =========================================================
-           TÍTULOS DE SEÇÃO
-           ========================================================= */
-
         .titulo-secao {
+            margin: 0;
+            color: var(--marfim);
             font-family: "Cormorant Garamond", Georgia, serif;
             font-size: 1.65rem;
             font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--marfim);
         }
-
-
-        /* =========================================================
-           TEXTO DE APRESENTAÇÃO
-           ========================================================= */
 
         .introducao {
             max-width: 570px;
             margin: 18px auto 42px;
             color: var(--marfim-suave);
         }
-
-
-        /* =========================================================
-           LINKS
-           ========================================================= */
 
         .links {
             display: flex;
@@ -160,17 +120,14 @@
         .botao {
             display: block;
             padding: 13px 24px;
-
             border: 1px solid var(--dourado);
             color: var(--marfim);
-
             font-family: "Cormorant Garamond", Georgia, serif;
             font-size: 1.2rem;
             font-weight: 600;
             letter-spacing: 0.08em;
             text-decoration: none;
             text-transform: uppercase;
-
             transition:
                 background-color 0.25s ease,
                 color 0.25s ease,
@@ -178,15 +135,22 @@
         }
 
         .botao:hover {
-            background: var(--dourado);
+            background-color: var(--dourado);
             color: var(--azul-profundo);
             border-color: var(--dourado);
         }
 
+        .botao-em-breve {
+            opacity: 0.55;
+            cursor: default;
+            pointer-events: none;
+        }
 
-        /* =========================================================
-           SOBRE
-           ========================================================= */
+        .botao-em-breve:hover {
+            background-color: transparent;
+            color: var(--marfim);
+            border-color: var(--dourado);
+        }
 
         .sobre {
             max-width: 590px;
@@ -198,28 +162,15 @@
             color: var(--marfim-suave);
         }
 
-
-        /* =========================================================
-           RODAPÉ
-           ========================================================= */
-
         footer {
             margin-top: 70px;
-
+            color: var(--dourado-suave);
             font-family: "Cormorant Garamond", Georgia, serif;
             font-size: 0.95rem;
             letter-spacing: 0.05em;
-
-            color: var(--dourado-suave);
         }
 
-
-        /* =========================================================
-           CELULAR
-           ========================================================= */
-
         @media (max-width: 500px) {
-
             .pagina {
                 padding: 55px 22px 40px;
             }
@@ -249,32 +200,19 @@
     </style>
 </head>
 
-
 <body>
 
     <main class="pagina">
 
-        <!-- =====================================================
-             CABEÇALHO
-             ===================================================== -->
-
         <header class="cabecalho">
-
             <h1 class="titulo">Selá</h1>
 
-            <p class="subtitulo">
+            <div class="subtitulo">
                 arranjos para violão solo e violão acompanhador
-            </p>
-
+            </div>
         </header>
 
-
-        <!-- =====================================================
-             CONTEÚDO DIGITAL
-             ===================================================== -->
-
         <section>
-
             <div class="ornamento">
                 <span>❦</span>
             </div>
@@ -284,58 +222,57 @@
             </h2>
 
             <p class="introducao">
-                Este espaço reúne as gravações, vídeos e outros
-                conteúdos relacionados aos arranjos deste livro.
+                Este espaço reúne as gravações, vídeos e outros conteúdos relacionados aos arranjos deste livro.
             </p>
-
 
             <div class="links">
 
-                <!-- SPOTIFY -->
-
-                <a href="https://open.spotify.com/intl-pt/artist/2HBD8Q2oCjFXQnIJY00qFC?si=ICBJbzByTOiQRzuSXmNC5Q"
-                   class="botao"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a
+                    href="https://open.spotify.com/artist/2HBD8Q2oCjFXQnIJY00qFC"
+                    class="botao"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     Ouça no Spotify
                 </a>
 
-
-                <!-- YOUTUBE -->
-
-                <a href="https://www.youtube.com/channel/UC0duipAOM9JHyOUcYX-yR7A"
-                   class="botao"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a
+                    href="https://www.youtube.com/@mrjasonmartins"
+                    class="botao"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     Ouça no YouTube
                 </a>
 
+                <a
+                    href="https://www.youtube.com/playlist?list=PLPnunUTjR2yM"
+                    class="botao"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Vídeos dos arranjos
+                </a>
 
-                <!-- INSTAGRAM -->
+                <span
+                    class="botao botao-em-breve"
+                    aria-disabled="true">
+                    Ebook do Selá - em breve
+                </span>
 
-                <a href="https://www.instagram.com/mrjasonmartins/"
-                   class="botao"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a
+                    href="https://www.instagram.com/mrjasonmartins/"
+                    class="botao"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     Instagram
                 </a>
 
-
-                <!-- E-MAIL -->
-
-                <a href="mailto:mrjasonmartins@gmail.com"
-                   class="botao">
+                <a
+                    href="mailto:mrjasonmartins@gmail.com"
+                    class="botao">
                     Contato por e-mail
                 </a>
 
             </div>
-
         </section>
-
-
-        <!-- =====================================================
-             SOBRE O PROJETO
-             ===================================================== -->
 
         <section class="sobre">
 
@@ -348,17 +285,10 @@
             </h2>
 
             <p>
-                <em>Selá</em> reúne arranjos para violão de hinos da
-                tradição cristã brasileira, concebidos para o estudo,
-                a apreciação e a prática musical.
+                <em>Selá</em> reúne arranjos para violão de hinos da tradição cristã brasileira, concebidos para o estudo, a apreciação e a prática musical.
             </p>
 
         </section>
-
-
-        <!-- =====================================================
-             RODAPÉ
-             ===================================================== -->
 
         <footer>
             Jason Martins · 2026
